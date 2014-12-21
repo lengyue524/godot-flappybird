@@ -4,19 +4,16 @@ extends Node2D
 # member variables here, example:
 # var a=2
 # var b="textvar"
-var ground1
-var ground2
-var ground1_pos
-var ground2_pos
-var ground1_rect
-var ground2_rect
+const half_width = 420
 var global = preload("global.gd")
 func _ready():
 	# Initalization here
-	ground1 = get_node("ground1")
-	ground2 = get_node("ground2")
-	ground1_pos = ground1.get_pos()
-	ground2_pos = ground2.get_pos()
-	
-#func _process(detal):
-#	pass
+	set_fixed_process(true)
+
+func _fixed_process(detal):
+	var pos = get_pos()
+	if pos.x<-half_width:
+		pos.x = half_width*3
+	var new_pos = Vector2(pos.x-global.roll_speed*detal,pos.y)
+	set_pos(new_pos)
+	#move(Vector2(-global.roll_speed*detal,0))

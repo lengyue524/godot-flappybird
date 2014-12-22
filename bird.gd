@@ -5,7 +5,7 @@ extends RigidBody2D
 # var a=2
 # var b="textvar"
 var jumping = false
-var GRAVITY
+var jump_force
 var anim
 func _ready():
 	# Initalization here
@@ -13,7 +13,8 @@ func _ready():
 	anim.play("down")
 	#连接谁的发送到connect anim‘'s finished signal to self obj and implement it by func: finished()
 	anim.connect("finished",self,"finished")
-	GRAVITY = get_node("/root/global").GRAVITY
+	jump_force = get_node("/root/global").jump_force
+	get_node("Area2D").connect("body_enter",self,"body_enter")
 	set_process(true)
 	set_fixed_process(true)
 	set_process_input(true)
@@ -32,12 +33,14 @@ func _process(delta):
 #		set_pos(get_pos()+Vector2(0,delta*GRAVITY))
 #		#move(Vector2(0,delta*GRAVITY))
 #	elif jumping:
-#		set_pos(get_pos()+Vector2(0,delta*GRAVITY))
+#		set_pos(get_pos()+Vector2(0,-delta*GRAVITY))
 #		#move(Vector2(0,-delta*GRAVITY))
 
 func _input(ev):
 	if ev.is_pressed():
 		anim.play("up")
+		set_linear_velocity( Vector2(0,-jump_force) )
+		#set_applied_force( Vector2(0,-GRAVITY) )
 		jumping = true
 #		yield(anim,"animation_changed")
 #		jumping = false
@@ -46,5 +49,5 @@ func _input(ev):
 #			anim.play("down")
 #			jumping = false
 
-func _integrate_forcres(state):
-	print(state)
+func body_enter(body):
+	print("peng")

@@ -5,18 +5,18 @@ extends KinematicBody2D
 # var a=2
 # var b="textvar"
 var jumping = false
-const GRAVITY = 1000
+var GRAVITY
 var anim
-
 func _ready():
 	# Initalization here
 	anim = get_node("anim")
 	anim.play("down")
+	#连接谁的发送到connect anim‘'s finished signal to self obj and implement it by func: finished()
+	anim.connect("finished",self,"finished")
+	GRAVITY = get_node("/root/global").GRAVITY
 	set_process(true)
 	set_fixed_process(true)
 	set_process_input(true)
-	#连接谁的发送到connect anim‘'s finished signal to self obj and implement it by func: finished()
-	anim.connect("finished",self,"finished")
 
 func finished():
 	anim.play("down")

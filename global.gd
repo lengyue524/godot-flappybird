@@ -1,7 +1,7 @@
 
 extends Node
 const roll_speed = 200
-const GRAVITY = 1000
+const GRAVITY = 500
 const pipe_rate = 2
 var current_scene = null
 

@@ -15,7 +15,7 @@ func _ready():
 	set_process(true)
 
 func _process(detal):
-	print(instance_flag)
+	#print(instance_flag)
 	if instance_flag==0:
 		pipe_array.append(instance_pipe())
 	instance_flag += detal
@@ -29,6 +29,7 @@ func _process(detal):
 			p.free()
 		else:
 			p.set_pos(p.get_pos()+Vector2(-roll_speed*detal,0))
+	check_collision()
 
 func instance_pipe():
 	var new_pipe = pipe.instance()
@@ -37,3 +38,10 @@ func instance_pipe():
 	var y = rand_range(300,980)
 	new_pipe.set_pos(Vector2(800,y))
 	return new_pipe
+	
+func check_collision():
+	var bird = get_node("bird")
+#	print(bird.get_shape_count())
+#	print(bird.get_shape_transform(0))
+#	print(bird.get_shape_transform(1))
+	#bird.collide(bird.get_shape_transform( int shape_idx ))

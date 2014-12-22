@@ -1,5 +1,5 @@
 
-extends KinematicBody2D
+extends RigidBody2D
 
 # member variables here, example:
 # var a=2
@@ -27,11 +27,13 @@ func _process(delta):
 		set_pos(Vector2(get_pos().x,0))
 
 
-func _fixed_process(delta):
-	if not jumping:
-		move(Vector2(0,delta*GRAVITY))
-	elif jumping:
-		move(Vector2(0,-delta*GRAVITY))
+#func _fixed_process(delta):
+#	if not jumping:
+#		set_pos(get_pos()+Vector2(0,delta*GRAVITY))
+#		#move(Vector2(0,delta*GRAVITY))
+#	elif jumping:
+#		set_pos(get_pos()+Vector2(0,delta*GRAVITY))
+#		#move(Vector2(0,-delta*GRAVITY))
 
 func _input(ev):
 	if ev.is_pressed():
@@ -44,4 +46,5 @@ func _input(ev):
 #			anim.play("down")
 #			jumping = false
 
-	
+func _integrate_forcres(state):
+	print(state)

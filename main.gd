@@ -25,8 +25,7 @@ func _process(detal):
 		if p.get_pos().x<-100:
 			#delete pipe out screen
 			pipe_array.erase(p)
-			get_parent().remove_child(p)
-			p.free()
+			get_parent().remove_and_delete_child(p)
 		else:
 			p.set_pos(p.get_pos()+Vector2(-roll_speed*detal,0))
 	check_collision()

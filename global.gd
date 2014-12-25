@@ -1,7 +1,7 @@
 
 extends Node
-const roll_speed = 0#200
-const jump_force = 500
+const roll_speed = 200
+const jump_force = 2000
 const pipe_rate = 2
 var current_scene = null
 

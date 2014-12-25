@@ -39,7 +39,7 @@ func finished():
 func _input(ev):
 	if ev.is_pressed():
 		anim.play("up")
-		set_linear_velocity( Vector2(0,jump_force) )
+		apply_impulse( Vector2(0.5,0.5), Vector2(0,-jump_force) )
 		#set_applied_force( Vector2(0,-GRAVITY) )
 		jumping = true
 #		yield(anim,"animation_changed")
@@ -53,9 +53,10 @@ func _input(ev):
 #	print(body)
 
 func _integrate_forcres(s):
-	print("peng")
+	#set_linear_velocity(Vector2(0,-100))
+	apply_impulse( Vector2(0.5,0.5), Vector2(0,-jump_force))
 	if get_pos().y<0:
 		set_pos(Vector2(get_pos().x,0))
 	var lv = s.get_linear_velocity()
 	var step = s.get_step()
-	print(lv+","+step)
+	#print(lv+","+step)

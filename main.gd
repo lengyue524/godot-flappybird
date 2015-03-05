@@ -28,7 +28,7 @@ func _process(detal):
 			get_parent().remove_and_delete_child(p)
 		else:
 			p.set_pos(p.get_pos()+Vector2(-roll_speed*detal,0))
-	check_collision()
+#	check_collision()
 
 func instance_pipe():
 	var new_pipe = pipe.instance()
@@ -38,8 +38,8 @@ func instance_pipe():
 	new_pipe.set_pos(Vector2(800,y))
 	return new_pipe
 	
-func check_collision():
-	var bird = get_node("bird")
+#func check_collision():
+#	var bird = get_node("bird")
 #	print(bird.get_shape_count())
 #	print(bird.get_shape_transform(0))
 #	print(bird.get_shape_transform(1))

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <resource_file type="PackedScene" subresource_count="9" version="1.0" version_name="Godot Engine v1.0.stable.custom_build">
-	<ext_resource path="res://image/bird1.png" type="Texture"></ext_resource>
-	<ext_resource path="res://bird.gd" type="Script"></ext_resource>
 	<ext_resource path="res://image/bird2.png" type="Texture"></ext_resource>
 	<ext_resource path="res://image/bird3.png" type="Texture"></ext_resource>
+	<ext_resource path="res://image/bird1.png" type="Texture"></ext_resource>
+	<ext_resource path="res://bird.gd" type="Script"></ext_resource>
 	<resource type="Animation" path="local://0">
 		<real name="length"> 0.6 </real>
 		<bool name="loop"> False </bool>
@@ -15,35 +15,18 @@
 			<string> "cont" </string>
 			<bool> True </bool>
 			<string> "transitions" </string>
-			<real_array  len="2"> 				1, 1 </real_array>
+			<real_array  len="1"> 				1 </real_array>
 			<string> "values" </string>
-			<array  len="2" shared="false">
+			<array  len="1" shared="false">
 				<real> 45 </real>
-				<real> 0 </real>
 			</array>
 			<string> "times" </string>
-			<real_array  len="2"> 				0, 0.6 </real_array>
+			<real_array  len="1"> 				0 </real_array>
 		</dictionary>
 		<string name="tracks/1/type"> "value" </string>
-		<node_path name="tracks/1/path"> ".:transform/pos" </node_path>
+		<node_path name="tracks/1/path"> "Sprite:frame" </node_path>
 		<int name="tracks/1/interp"> 1 </int>
 		<dictionary name="tracks/1/keys" shared="false">
-			<string> "cont" </string>
-			<bool> True </bool>
-			<string> "transitions" </string>
-			<real_array  len="2"> 				1, 0.5 </real_array>
-			<string> "values" </string>
-			<array  len="2" shared="false">
-				<vector2> 0, 0 </vector2>
-				<vector2> 0, -200 </vector2>
-			</array>
-			<string> "times" </string>
-			<real_array  len="2"> 				0, 0.6 </real_array>
-		</dictionary>
-		<string name="tracks/2/type"> "value" </string>
-		<node_path name="tracks/2/path"> "Sprite:frame" </node_path>
-		<int name="tracks/2/interp"> 1 </int>
-		<dictionary name="tracks/2/keys" shared="false">
 			<string> "cont" </string>
 			<bool> False </bool>
 			<string> "transitions" </string>
@@ -113,9 +96,9 @@
 	<main_resource>
 		<dictionary name="_bundled" shared="false">
 			<string> "names" </string>
-			<string_array  len="35">
-				<string> "RigidBody2D" </string>
-				<string> "Node2D" </string>
+			<string_array  len="54">
+				<string> "bird" </string>
+				<string> "KinematicBody2D" </string>
 				<string> "_import_path" </string>
 				<string> "visibility/visible" </string>
 				<string> "visibility/opacity" </string>
@@ -126,6 +109,14 @@
 				<string> "transform/scale" </string>
 				<string> "z/z" </string>
 				<string> "z/relative" </string>
+				<string> "input/pickable" </string>
+				<string> "shape_count" </string>
+				<string> "layers" </string>
+				<string> "collide_with/static" </string>
+				<string> "collide_with/kinematic" </string>
+				<string> "collide_with/rigid" </string>
+				<string> "collide_with/character" </string>
+				<string> "collision/margin" </string>
 				<string> "script/script" </string>
 				<string> "__meta__" </string>
 				<string> "anim" </string>
@@ -142,6 +133,7 @@
 				<string> "Sprite" </string>
 				<string> "AnimatedSprite" </string>
 				<string> "frames" </string>
+				<string> "frame" </string>
 				<string> "centered" </string>
 				<string> "flip_h" </string>
 				<string> "flip_v" </string>
@@ -149,23 +141,36 @@
 				<string> "CollisionShape2D" </string>
 				<string> "shape" </string>
 				<string> "trigger" </string>
+				<string> "jumpSound" </string>
+				<string> "SamplePlayer2D" </string>
+				<string> "params/volume_db" </string>
+				<string> "params/pitch_scale" </string>
+				<string> "params/attenuation/min_distance" </string>
+				<string> "params/attenuation/max_distance" </string>
+				<string> "params/attenuation/distance_exp" </string>
+				<string> "config/polyphony" </string>
+				<string> "config/samples" </string>
+				<string> "config/pitch_random" </string>
 			</string_array>
 			<string> "version" </string>
 			<int> 1 </int>
 			<string> "conn_count" </string>
 			<int> 0 </int>
 			<string> "node_count" </string>
-			<int> 4 </int>
+			<int> 5 </int>
 			<string> "variants" </string>
-			<array  len="23" shared="false">
+			<array  len="27" shared="false">
 				<node_path> "" </node_path>
 				<bool> True </bool>
 				<real> 1 </real>
 				<int> 1 </int>
-				<vector2> 0, -200 </vector2>
-				<real> -45 </real>
+				<vector2> 0, 0 </vector2>
+				<real> 45 </real>
 				<vector2> 1, 1 </vector2>
 				<int> 0 </int>
+				<bool> False </bool>
+				<int> 3 </int>
+				<real> 0.08 </real>
 				<resource  resource_type="Script" path="res://bird.gd">  </resource>
 				<dictionary  shared="false">
 					<string> "__editor_plugin_states__" </string>
@@ -182,16 +187,28 @@
 						</dictionary>
 						<string> "2D" </string>
 						<dictionary  shared="false">
-							<string> "pixel_snap" </string>
+							<string> "snap_pixel" </string>
 							<bool> False </bool>
+							<string> "snap_rotation_step" </string>
+							<real> 0.261799 </real>
 							<string> "zoom" </string>
-							<real> 0.291989 </real>
-							<string> "use_snap" </string>
+							<real> 0.66342 </real>
+							<string> "snap_step" </string>
+							<vector2> 10, 10 </vector2>
+							<string> "snap_relative" </string>
 							<bool> False </bool>
+							<string> "snap_grid" </string>
+							<bool> False </bool>
+							<string> "snap_rotation_offset" </string>
+							<real> 0 </real>
+							<string> "snap_show_grid" </string>
+							<bool> False </bool>
+							<string> "snap_offset" </string>
+							<vector2> 0, 0 </vector2>
 							<string> "ofs" </string>
-							<vector2> -755.742, -463.564 </vector2>
-							<string> "snap" </string>
-							<int> 10 </int>
+							<vector2> -330.454, -367.521 </vector2>
+							<string> "snap_rotation" </string>
+							<bool> False </bool>
 						</dictionary>
 						<string> "3D" </string>
 						<dictionary  shared="false">
@@ -294,7 +311,7 @@
 						<int> 0 </int>
 					</dictionary>
 					<string> "__editor_plugin_screen__" </string>
-					<string> "Script" </string>
+					<string> "2D" </string>
 				</dictionary>
 				<real> 0 </real>
 				<node_path> ".." </node_path>
@@ -303,16 +320,16 @@
 				<array  len="0" shared="false">
 				</array>
 				<string> "down" </string>
-				<vector2> 0, 0 </vector2>
 				<resource  resource_type="SpriteFrames" path="local://2">  </resource>
-				<bool> False </bool>
+				<int> 2 </int>
 				<color> 1, 1, 1, 1 </color>
 				<vector2> -2.09558, -2.39494 </vector2>
 				<vector2> 2.45079, 1.69085 </vector2>
 				<resource  resource_type="Shape2D" path="local://3">  </resource>
-			</array>
+				<real> 2048 </real>
+				<resource name=""></resource>			</array>
 			<string> "nodes" </string>
-			<int_array  len="126"> 				-1, -1, 1, 0, -1, 12, 2, 0, 3, 1, 4, 2, 5, 2, 6, 3, 7, 4, 8, 5, 9, 6, 10, 7, 11, 1, 12, 8, 13, 9, 0, 0, 0, 15, 14, -1, 10, 2, 0, 16, 7, 17, 10, 18, 11, 19, 12, 20, 13, 21, 1, 22, 2, 23, 14, 24, 15, 0, 0, 0, 26, 25, -1, 15, 2, 0, 3, 1, 4, 2, 5, 2, 6, 3, 7, 16, 8, 10, 9, 6, 10, 7, 11, 1, 27, 17, 28, 1, 29, 18, 30, 18, 31, 19, 0, 0, 0, 32, 32, -1, 12, 2, 0, 3, 1, 4, 2, 5, 2, 6, 3, 7, 20, 8, 10, 9, 21, 10, 7, 11, 1, 33, 22, 34, 18, 0 </int_array>
+			<int_array  len="187"> 				-1, -1, 1, 0, -1, 20, 2, 0, 3, 1, 4, 2, 5, 2, 6, 3, 7, 4, 8, 5, 9, 6, 10, 7, 11, 1, 12, 8, 13, 7, 14, 9, 15, 1, 16, 1, 17, 1, 18, 1, 19, 10, 20, 11, 21, 12, 0, 0, 0, 23, 22, -1, 10, 2, 0, 24, 7, 25, 13, 26, 14, 27, 15, 28, 16, 29, 1, 30, 2, 31, 17, 32, 18, 0, 0, 0, 34, 33, -1, 16, 2, 0, 3, 1, 4, 2, 5, 2, 6, 3, 7, 4, 8, 13, 9, 6, 10, 7, 11, 1, 35, 19, 36, 20, 37, 1, 38, 8, 39, 8, 40, 21, 0, 0, 0, 41, 41, -1, 12, 2, 0, 3, 1, 4, 2, 5, 2, 6, 3, 7, 22, 8, 13, 9, 23, 10, 7, 11, 1, 42, 24, 43, 8, 0, 0, 0, 45, 44, -1, 18, 2, 0, 3, 1, 4, 2, 5, 2, 6, 3, 7, 4, 8, 13, 9, 6, 10, 7, 11, 1, 46, 13, 47, 2, 48, 2, 49, 25, 50, 2, 51, 3, 52, 26, 53, 13, 0 </int_array>
 			<string> "conns" </string>
 			<int_array  len="0"> 				 </int_array>
 		</dictionary>

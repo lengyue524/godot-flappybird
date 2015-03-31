@@ -1,5 +1,4 @@
-
-extends Node2D
+extends KinematicBody2D
 
 # member variables here, example:
 # var a=2
@@ -17,4 +16,4 @@ func _fixed_process(detal):
 		pos.x = half_width*3
 	var new_pos = Vector2(pos.x-roll_speed*detal,pos.y)
 	set_pos(new_pos)
-	#move(Vector2(-global.roll_speed*detal,0))
+	#move(Vector2(-roll_speed*detal,0))

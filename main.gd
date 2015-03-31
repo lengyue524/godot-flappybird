@@ -32,6 +32,7 @@ func _process(detal):
 
 func instance_pipe():
 	var new_pipe = pipe.instance()
+	new_pipe.set_z(1)
 	get_parent().add_child(new_pipe)
 	#set pipe position
 	var y = rand_range(300,980)

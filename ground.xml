@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <resource_file type="PackedScene" subresource_count="4" version="1.0" version_name="Godot Engine v1.0.stable.custom_build">
-	<ext_resource path="res://image/ground.png" type="Texture"></ext_resource>
 	<ext_resource path="res://ground.gd" type="Script"></ext_resource>
+	<ext_resource path="res://image/ground.png" type="Texture"></ext_resource>
 	<resource type="RectangleShape2D" path="local://0">
 		<real name="custom_solver_bias"> 0 </real>
 		<vector2 name="extents"> 10, 10 </vector2>
@@ -10,9 +10,9 @@
 	<main_resource>
 		<dictionary name="_bundled" shared="false">
 			<string> "names" </string>
-			<string_array  len="40">
+			<string_array  len="39">
 				<string> "ground1" </string>
-				<string> "KinematicBody2D" </string>
+				<string> "StaticBody2D" </string>
 				<string> "_import_path" </string>
 				<string> "visibility/visible" </string>
 				<string> "visibility/opacity" </string>
@@ -29,11 +29,10 @@
 				<string> "shapes/0/transform" </string>
 				<string> "shapes/0/trigger" </string>
 				<string> "layers" </string>
-				<string> "collide_with/static" </string>
-				<string> "collide_with/kinematic" </string>
-				<string> "collide_with/rigid" </string>
-				<string> "collide_with/character" </string>
-				<string> "collision/margin" </string>
+				<string> "constant_linear_velocity" </string>
+				<string> "constant_angular_velocity" </string>
+				<string> "friction" </string>
+				<string> "bounce" </string>
 				<string> "script/script" </string>
 				<string> "__meta__" </string>
 				<string> "Sprite" </string>
@@ -59,7 +58,7 @@
 			<string> "node_count" </string>
 			<int> 3 </int>
 			<string> "variants" </string>
-			<array  len="20" shared="false">
+			<array  len="19" shared="false">
 				<node_path> "" </node_path>
 				<bool> True </bool>
 				<real> 1 </real>
@@ -71,7 +70,7 @@
 				<bool> False </bool>
 				<resource  resource_type="Shape2D" path="local://0">  </resource>
 				<matrix32> 42, -0, 0, 14, 0.44967, 0.628533 </matrix32>
-				<real> 0.08 </real>
+				<vector2> 0, 0 </vector2>
 				<resource  resource_type="Script" path="res://ground.gd">  </resource>
 				<dictionary  shared="false">
 					<string> "__editor_plugin_states__" </string>
@@ -213,7 +212,6 @@
 					<string> "__editor_plugin_screen__" </string>
 					<string> "Script" </string>
 				</dictionary>
-				<vector2> 0, 0 </vector2>
 				<resource  resource_type="Texture" path="res://image/ground.png">  </resource>
 				<color> 1, 1, 1, 1 </color>
 				<rect2> 0, 0, 0, 0 </rect2>
@@ -221,7 +219,7 @@
 				<vector2> 42, 14 </vector2>
 			</array>
 			<string> "nodes" </string>
-			<int_array  len="133"> 				-1, -1, 1, 0, -1, 23, 2, 0, 3, 1, 4, 2, 5, 2, 6, 3, 7, 4, 8, 5, 9, 6, 10, 7, 11, 1, 12, 8, 13, 3, 14, 9, 15, 10, 16, 8, 17, 3, 18, 1, 19, 1, 20, 1, 21, 1, 22, 11, 23, 12, 24, 13, 0, 0, 0, 25, 25, -1, 21, 2, 0, 3, 1, 4, 2, 5, 2, 6, 3, 7, 14, 8, 5, 9, 6, 10, 7, 11, 1, 26, 15, 27, 1, 28, 14, 29, 8, 30, 8, 31, 3, 32, 3, 33, 7, 34, 16, 35, 8, 36, 17, 0, 0, 0, 37, 37, -1, 12, 2, 0, 3, 1, 4, 2, 5, 2, 6, 3, 7, 18, 8, 5, 9, 19, 10, 7, 11, 1, 38, 9, 39, 8, 0 </int_array>
+			<int_array  len="131"> 				-1, -1, 1, 0, -1, 22, 2, 0, 3, 1, 4, 2, 5, 2, 6, 3, 7, 4, 8, 5, 9, 6, 10, 7, 11, 1, 12, 8, 13, 3, 14, 9, 15, 10, 16, 8, 17, 3, 18, 11, 19, 5, 20, 2, 21, 5, 22, 12, 23, 13, 0, 0, 0, 24, 24, -1, 21, 2, 0, 3, 1, 4, 2, 5, 2, 6, 3, 7, 11, 8, 5, 9, 6, 10, 7, 11, 1, 25, 14, 26, 1, 27, 11, 28, 8, 29, 8, 30, 3, 31, 3, 32, 7, 33, 15, 34, 8, 35, 16, 0, 0, 0, 36, 36, -1, 12, 2, 0, 3, 1, 4, 2, 5, 2, 6, 3, 7, 17, 8, 5, 9, 18, 10, 7, 11, 1, 37, 9, 38, 8, 0 </int_array>
 			<string> "conns" </string>
 			<int_array  len="0"> 				 </int_array>
 		</dictionary>

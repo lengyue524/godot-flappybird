@@ -10,7 +10,7 @@
 	<main_resource>
 		<dictionary name="_bundled" shared="false">
 			<string> "names" </string>
-			<string_array  len="42">
+			<string_array  len="41">
 				<string> "Node2D" </string>
 				<string> "_import_path" </string>
 				<string> "visibility/visible" </string>
@@ -25,18 +25,17 @@
 				<string> "__meta__" </string>
 				<string> "dead" </string>
 				<string> "pipeUp" </string>
-				<string> "KinematicBody2D" </string>
+				<string> "StaticBody2D" </string>
 				<string> "input/pickable" </string>
 				<string> "shape_count" </string>
 				<string> "shapes/0/shape" </string>
 				<string> "shapes/0/transform" </string>
 				<string> "shapes/0/trigger" </string>
 				<string> "layers" </string>
-				<string> "collide_with/static" </string>
-				<string> "collide_with/kinematic" </string>
-				<string> "collide_with/rigid" </string>
-				<string> "collide_with/character" </string>
-				<string> "collision/margin" </string>
+				<string> "constant_linear_velocity" </string>
+				<string> "constant_angular_velocity" </string>
+				<string> "friction" </string>
+				<string> "bounce" </string>
 				<string> "CollisionShape2D" </string>
 				<string> "shape" </string>
 				<string> "trigger" </string>
@@ -61,7 +60,7 @@
 			<string> "node_count" </string>
 			<int> 7 </int>
 			<string> "variants" </string>
-			<array  len="24" shared="false">
+			<array  len="23" shared="false">
 				<node_path> "" </node_path>
 				<bool> True </bool>
 				<real> 1 </real>
@@ -206,7 +205,6 @@
 				<resource  resource_type="Shape2D" path="local://0">  </resource>
 				<matrix32> 6.5, -0, 0, 40, 0.118423, 11.7027 </matrix32>
 				<int> 2 </int>
-				<real> 0.08 </real>
 				<vector2> 0.118423, 11.7027 </vector2>
 				<vector2> 6.5, 40 </vector2>
 				<resource  resource_type="Texture" path="res://image/holdback2.png">  </resource>
@@ -218,7 +216,7 @@
 				<resource  resource_type="Texture" path="res://image/holdback1.png">  </resource>
 			</array>
 			<string> "nodes" </string>
-			<int_array  len="288"> 				-1, -1, 0, 0, -1, 11, 1, 0, 2, 1, 3, 2, 4, 2, 5, 3, 6, 4, 7, 5, 8, 6, 9, 7, 10, 1, 11, 8, 1, 12, 0, 0, 14, 13, -1, 21, 1, 0, 2, 1, 3, 2, 4, 2, 5, 3, 6, 9, 7, 5, 8, 6, 9, 7, 10, 1, 15, 10, 16, 3, 17, 11, 18, 12, 19, 10, 20, 13, 21, 1, 22, 1, 23, 1, 24, 1, 25, 14, 0, 1, 0, 26, 26, -1, 12, 1, 0, 2, 1, 3, 2, 4, 2, 5, 3, 6, 15, 7, 5, 8, 16, 9, 7, 10, 1, 27, 11, 28, 10, 0, 1, 0, 29, 29, -1, 21, 1, 0, 2, 1, 3, 2, 4, 2, 5, 3, 6, 4, 7, 5, 8, 6, 9, 7, 10, 1, 30, 17, 31, 1, 32, 4, 33, 10, 34, 10, 35, 3, 36, 3, 37, 7, 38, 18, 39, 10, 40, 19, 0, 0, 0, 14, 41, -1, 21, 1, 0, 2, 1, 3, 2, 4, 2, 5, 3, 6, 20, 7, 5, 8, 6, 9, 7, 10, 1, 15, 10, 16, 3, 17, 11, 18, 21, 19, 10, 20, 13, 21, 1, 22, 1, 23, 1, 24, 1, 25, 14, 0, 4, 0, 26, 26, -1, 12, 1, 0, 2, 1, 3, 2, 4, 2, 5, 3, 6, 22, 7, 5, 8, 16, 9, 7, 10, 1, 27, 11, 28, 10, 0, 4, 0, 29, 29, -1, 21, 1, 0, 2, 1, 3, 2, 4, 2, 5, 3, 6, 4, 7, 5, 8, 6, 9, 7, 10, 1, 30, 23, 31, 1, 32, 4, 33, 10, 34, 10, 35, 3, 36, 3, 37, 7, 38, 18, 39, 10, 40, 19, 0 </int_array>
+			<int_array  len="284"> 				-1, -1, 0, 0, -1, 11, 1, 0, 2, 1, 3, 2, 4, 2, 5, 3, 6, 4, 7, 5, 8, 6, 9, 7, 10, 1, 11, 8, 1, 12, 0, 0, 14, 13, -1, 20, 1, 0, 2, 1, 3, 2, 4, 2, 5, 3, 6, 9, 7, 5, 8, 6, 9, 7, 10, 1, 15, 10, 16, 3, 17, 11, 18, 12, 19, 10, 20, 13, 21, 4, 22, 5, 23, 2, 24, 5, 0, 1, 0, 25, 25, -1, 12, 1, 0, 2, 1, 3, 2, 4, 2, 5, 3, 6, 14, 7, 5, 8, 15, 9, 7, 10, 1, 26, 11, 27, 10, 0, 1, 0, 28, 28, -1, 21, 1, 0, 2, 1, 3, 2, 4, 2, 5, 3, 6, 4, 7, 5, 8, 6, 9, 7, 10, 1, 29, 16, 30, 1, 31, 4, 32, 10, 33, 10, 34, 3, 35, 3, 36, 7, 37, 17, 38, 10, 39, 18, 0, 0, 0, 14, 40, -1, 20, 1, 0, 2, 1, 3, 2, 4, 2, 5, 3, 6, 19, 7, 5, 8, 6, 9, 7, 10, 1, 15, 10, 16, 3, 17, 11, 18, 20, 19, 10, 20, 13, 21, 4, 22, 5, 23, 2, 24, 5, 0, 4, 0, 25, 25, -1, 12, 1, 0, 2, 1, 3, 2, 4, 2, 5, 3, 6, 21, 7, 5, 8, 15, 9, 7, 10, 1, 26, 11, 27, 10, 0, 4, 0, 28, 28, -1, 21, 1, 0, 2, 1, 3, 2, 4, 2, 5, 3, 6, 4, 7, 5, 8, 6, 9, 7, 10, 1, 29, 22, 30, 1, 31, 4, 32, 10, 33, 10, 34, 3, 35, 3, 36, 7, 37, 17, 38, 10, 39, 18, 0 </int_array>
 			<string> "conns" </string>
 			<int_array  len="0"> 				 </int_array>
 		</dictionary>

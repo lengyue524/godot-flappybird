@@ -27,6 +27,8 @@ func _process(delta):
 		set_pos(Vector2(get_pos().x,0))
 
 func _fixed_process(delta):
+	if is_colliding():
+		print("peng")
 	if jumping:
 		jump(delta)
 	else:

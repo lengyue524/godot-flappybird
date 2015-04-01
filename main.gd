@@ -28,6 +28,8 @@ func _process(detal):
 			get_parent().remove_and_delete_child(p)
 		else:
 			p.set_pos(p.get_pos()+Vector2(-roll_speed*detal,0))
+	get_node("score").set_text(str(get_node("/root/global").score))
+	#print(get_node("/root/global").score)
 #	check_collision()
 
 func instance_pipe():

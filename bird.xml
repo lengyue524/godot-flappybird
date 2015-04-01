@@ -197,7 +197,7 @@
 							<string> "snap_rotation_step" </string>
 							<real> 0.261799 </real>
 							<string> "zoom" </string>
-							<real> 0.66342 </real>
+							<real> 0.54036 </real>
 							<string> "snap_step" </string>
 							<vector2> 10, 10 </vector2>
 							<string> "snap_relative" </string>
@@ -211,7 +211,7 @@
 							<string> "snap_offset" </string>
 							<vector2> 0, 0 </vector2>
 							<string> "ofs" </string>
-							<vector2> -330.454, -367.521 </vector2>
+							<vector2> -662.303, -416.953 </vector2>
 							<string> "snap_rotation" </string>
 							<bool> False </bool>
 						</dictionary>
@@ -316,7 +316,7 @@
 						<int> 0 </int>
 					</dictionary>
 					<string> "__editor_plugin_screen__" </string>
-					<string> "2D" </string>
+					<string> "Script" </string>
 				</dictionary>
 				<real> 0 </real>
 				<node_path> ".." </node_path>

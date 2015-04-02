@@ -12,6 +12,7 @@ var roll_speed
 func _ready():
 	pipe_rate = get_node("/root/global").pipe_rate
 	roll_speed = get_node("/root/global").roll_speed
+	get_node("score").set_text("0")
 	set_process(true)
 
 func _process(detal):
@@ -35,7 +36,7 @@ func _process(detal):
 func instance_pipe():
 	var new_pipe = pipe.instance()
 	new_pipe.set_z(1)
-	get_parent().add_child(new_pipe)
+	add_child(new_pipe)
 	#set pipe position
 	var y = rand_range(300,980)
 	new_pipe.set_pos(Vector2(800,y))

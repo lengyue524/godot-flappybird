@@ -28,11 +28,11 @@ func _process(delta):
 
 func _fixed_process(delta):
 	if is_colliding():
-		print("peng")
+		game_over()
 	if jumping:
 		jump(delta)
 	else:
-		move(Vector2(0,jump_speed*delta))
+		move(Vector2(0,fall_speed*delta))
 
 func _input(ev):
 	if ev.is_pressed():
@@ -46,3 +46,6 @@ func jump(delta):
 	if jumping_time>jump_time:
 		anim.play("down")
 		jumping = false;
+
+func game_over():
+	get_node("/root/global").goto_scene("res://game_over.scn")

@@ -12,7 +12,7 @@ var roll_speed
 func _ready():
 	pipe_rate = get_node("/root/global").pipe_rate
 	roll_speed = get_node("/root/global").roll_speed
-	get_node("score").set_text("0")
+	get_node("/root/global").score = 0
 	set_process(true)
 
 func _process(detal):

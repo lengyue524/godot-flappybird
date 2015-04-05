@@ -7,6 +7,5 @@ extends Label
 
 func _ready():
 	set_text(str(get_node("/root/global").score))
-	get_node("/root/global").score = 0
 
 

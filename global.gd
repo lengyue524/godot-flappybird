@@ -14,7 +14,8 @@ func _ready():
 	current_scene = root.get_child( root.get_child_count() -1 )
 
 func goto_scene(scene):
-	# remove current scene from root and enqueue it for deletion
+	# remove current scene from root and enqueue it for deletion\
+	#get_tree().get_root().remove_child(current_scene)
 	# (when deleted, it will be removed)
 	current_scene.queue_free()
 

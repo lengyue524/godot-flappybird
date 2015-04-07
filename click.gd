@@ -1,5 +1,5 @@
 
-extends TouchScreenButton
+extends Node2D
 
 # member variables here, example:
 # var a=2
@@ -8,8 +8,11 @@ extends TouchScreenButton
 func _ready():
 	# Initalization here
 	#set_process_input(true)
+	set_fixed_process(true)
 	pass
-
+func _fixed_process(delta):
+	if Input.is_action_pressed("ui_accept"):
+		_on_click_pressed()
 #func _input(event):
 #	get_tree().set_input_as_handled()
 #func _unhandled_input(event):
@@ -26,5 +29,4 @@ func _ready():
 #		accept_event()
 
 func _on_click_pressed():
-	print("_on_click_pressed")
 	get_node("/root/global").goto_scene("res://main.scn")

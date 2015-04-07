@@ -35,7 +35,7 @@ func _fixed_process(delta):
 		move(Vector2(0,fall_speed*delta))
 
 func _input(ev):
-	if (ev.type == InputEvent.SCREEN_TOUCH and ev.pressed):
+	if (ev.type == InputEvent.SCREEN_TOUCH and ev.pressed) or (ev.is_action("ui_accept") and ev.pressed):
 		jumping_time = 0
 		jumping = true
 		get_tree().set_input_as_handled()

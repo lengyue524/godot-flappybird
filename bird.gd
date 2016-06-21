@@ -49,4 +49,5 @@ func jump(delta):
 		jumping = false;
 
 func game_over():
-	get_node("/root/global").goto_scene("res://game_over.scn")
+	get_tree().change_scene("res://game_over.scn")
+#	get_node("/root/global").goto_scene("res://game_over.scn")
